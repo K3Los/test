@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    p{
+        color: red;
+    }
+
+</style>
+<body>
+    <div class="container w-50 p-5 bg-black">
+        <form action="" class="p-3 shadow-sm" id="register">
+            <input type="text" id="username" placeholder="Username" class="form-control">
+            <p id="text_user" > Please input user name *</p>
+            <input type="text" id="email" placeholder="Email" class="form-control mt-2">
+            <p id="text_email" > Please input Email *</p>
+            <input type="text" id="password" placeholder="password" class="form-control mt-2">
+            <p id="text_password" > Please input Password *</p>
+            <div class="d-flex justify-content-center pt-5 pb-2">
+                <button id="btn" class="btn btn-sm text-bg-success">Signup</button>
+
+            </div>
+        </form>           
+    </div>
+</body>
+<script>
+    let register=document.querySelector('#register')
+    let username=document.querySelector('#username')
+    let email =document.querySelector('#email ')
+    let password=document.querySelector('#password')
+    let btn=document.querySelector('#btn')
+    let text_user=document.querySelector('#text_user')
+    let text_email=document.querySelector('#text_email')
+    let text_password=document.querySelector('#text_password')
+    btn.disabled = true
+
+    register.addEventListener('input', function(){
+        if(username.value){
+            text_user.textContent=''
+        }
+        if(email.value){
+            text_email.textContent=''
+        }
+        if(password.value){
+            text_password.textContent=''
+        }
+        if(username.value && email.value && password.value){
+            btn.disabled=false
+        }
+    })
+</script>
+</html>

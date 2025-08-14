@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5 bg-light">
+
+    <div id="card" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+        <!-- Cards will be dynamically rendered here -->
+    </div>
+
+    <!-- JavaScript File -->
+    
+</body>
+<script>
+    const cars = [
+    {
+        name: "Bugatti Centodieci",
+        image: '18Car1.png',  // Replace with your actual image if needed
+        originalPrice: 1000000,
+        discountPrice: 10000,
+        discount: "-10%"
+    },
+    {
+        name: "Lamborghini",
+        image: "18Car2.png",
+        originalPrice: 84000,
+        discountPrice: 79800,
+        discount: "-5%"
+    },
+    {
+        name: "Catron",
+        image: "18Car3.png",  // Reused Lamborghini image
+        originalPrice: 60000,
+        discountPrice: 48000,
+        discount: "-20%"
+    },
+    {
+        name: "Disney",
+        image: "18Card4.png",
+        originalPrice: 120000,
+        discountPrice: 108000,
+        discount: "-10%"
+    }
+];
+
+const cardContainer = document.getElementById("card");
+cars.forEach(car => {
+    const card = document.createElement("div");
+    card.className = "col";
+
+    card.innerHTML = `
+        <div class="card h-100 p-2">
+            <div class="position-relative">
+                <img src="${car.image}" class="card-img-top" alt="${car.name}" style="height: 200px; object-fit: contain;">
+                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 rounded-pill m-2">${car.discount}</span>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between">
+                <h5 class="card-title">${car.name}</h5>
+                <p class="card-text mb-2">
+                    <s class="text-muted">$${car.originalPrice.toLocaleString()}</s>
+                    <span class="fw-bold text-danger ms-2">$${car.discountPrice.toLocaleString()}</span>
+                </p>
+                <button class="btn btn-info text-white">Add to card</button>
+            </div>
+        </div>
+    `;
+    cardContainer.appendChild(card);
+});
+</script>
+
+</html>

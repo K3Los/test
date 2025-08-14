@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f5f5f5;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    input {
+      padding: 8px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      width: 200px;
+    }
+
+    #color-box {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    #error-msg {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="colorInput">Enter a color name:</label><br />
+  <input type="text" id="colorInput" placeholder="e.g. red, blue, coral" />
+  <div id="color-box"></div>
+  <div id="error-msg"></div>
+
+  <script>
+    const input = document.getElementById("colorInput");
+    const box = document.getElementById("color-box");
+    const errorMsg = document.getElementById("error-msg");
+
+    input.addEventListener("input", () => {
+      const color = input.value.trim().toLowerCase();
+      box.style.backgroundColor = ""; // Reset first
+      errorMsg.textContent = "";
+
+      // Create a dummy element to check if the color is valid
+      const isValidColor = (color) => {
+        const s = new Option().style;
+        s.color = color;
+        return s.color !== "";
+      };
+
+      if (color === "") {
+        box.style.backgroundColor = "white";
+      } else if (isValidColor(color)) {
+        box.style.backgroundColor = color;
+      } else {
+        errorMsg.textContent = `"${color}" is not a valid CSS color name.`;
+      }
+    });
+  </script>
+</body>
+</html> -->
+
+<!-- Ai

@@ -1,0 +1,51 @@
+
+</script>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<style>
+    #data{
+        width: 100%;
+        height: 100vh;
+        border: 3px solid black;
+        margin-top: 10px;
+        border-radius: 20px;
+        position: fixed;
+        top: 0;
+        z-index: -99;
+    }
+</style>
+<body>
+    <div class="container m-auto w-25 p-5">
+        <form action="" id="change_color">
+            <input type="color" id="color" class="form-control" placeholder="input code color">
+
+        </form>
+    </div>
+    <div id="data">
+
+    </div>
+</body>
+<script>
+let change_color = document.querySelector('#change_color')
+let color = document.querySelector('#color')
+let data = document.querySelector('#data')
+change_color.addEventListener('input',()=>{
+    console.log(color.value)
+    data.style.backgroundColor = color.value
+})
+</script>
+</html>

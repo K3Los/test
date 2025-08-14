@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+    <script>
+        let users=[
+            {
+            user_id : 0,
+            username : 'Los',
+            email: 'loslot72@gmail.com',
+            password: '8028jsdk'
+           },
+           {
+            user_id : 1,
+            username : 'Loy',
+            email: 'loslot0@gmail.com',
+            password: '8128jsdk'
+           },
+           {
+            user_id : 2,
+            username : 'Ley',
+            email: 'loslot1@gmail.com',
+            password: '8228jsdk'
+           },
+           {
+            user_id : 3,
+            username : 'Lin',
+            email: 'loslot2@gmail.com',
+            password: '8328jsdk'
+           },
+           {
+            user_id : 4,
+            username : 'Lay',
+            email: 'loslot3@gmail.com',
+            password: '8428jsdk'
+           },
+           {
+            user_id : 5,
+            username : 'Leat',
+            email: 'loslot4@gmail.com',
+            password: '8528jsdk'
+           },
+           {
+            user_id : 6,
+            username : 'Long',
+            email: 'loslot5@gmail.com',
+            password: '8628jsdk'
+           },
+           {
+            user_id : 7,
+            username : 'Lose',
+            email: 'loslot6@gmail.com',
+            password: '8728jsdk'
+           },
+           {
+            user_id : 8,
+            username : 'Loot',
+            email: 'loslot7@gmail.com',
+            password: '8828jsdk'
+           },
+           {
+            user_id : 9,
+            username : 'Love',
+            email: 'loslot8@gmail.com',
+            password: '8928jsdk'
+           },
+           {
+            user_id : 10,
+            username : 'List',
+            email: 'loslot9@gmail.com',
+            password: '8728jsdk'
+           }
+        ]
+        let text=''
+        users.map((item , index)=>{
+            text += `
+            <tr>
+                <td>${item['user_id']}</td>
+                <td>${item['username']}</td>
+                <td>${item['email']}</td>
+                <td>${item['password']}</td>
+            </tr>
+            `
+        })
+        document.querySelector('#data').innerHTML += text
+  
+        // for (x  in users){
+        //     console.log('user ID : ', users[x]['user_id'])
+        //     console.log('username : ', users[x]['username'])
+        //     console.log('Email : ', users[x]['email'])
+        //     console.log('Password : ', users[x]['password'])
+        //     console.log('---------------------------------')
+        // }
+
+        // for( x of users){ 
+        //     console.log(x ['username'])
+        // }
+          
+        // users.map((item , index)=>{
+        //     console.log(item ['username'])
+        // })
+
+        // users.forEach((item)=>{
+        //     console.log(item)
+
+        // })
+
+        
+    
+       
+    </script>
+
+
+</html>
